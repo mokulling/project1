@@ -1,12 +1,27 @@
 body {
     font-family: 'Press Start 2P', cursive;;
+    max-width: 800px;
+  margin: 0 auto;
 }
 
+ header {
+    text-align: center;
+} 
+
 h1{
+    
     color: red;
 }
 
 .container {
-    max-width: 900px;
+   max-width: 800px;
 }
 
+#hide {
+    display: none;
+}
+
+#logo {
+    height: 30px;
+    width: 30px;
+}
