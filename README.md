@@ -1,5 +1,4 @@
 # project1
-<<<<<<< HEAD
 
 front page
 -title 
@@ -21,8 +20,4 @@ styling
 -simple grid
 
 
-
-=======
-example
-## to do list
->>>>>>> 2afa603c2eee2ab45eb58f6f162e916e03c528d9
+hello

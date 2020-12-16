@@ -1,0 +1,12 @@
+body {
+    font-family: 'Press Start 2P', cursive;;
+}
+
+h1{
+    color: red;
+}
+
+.container {
+    max-width: 900px;
+}
+
