@@ -2,6 +2,10 @@ body {
     font-family: 'Press Start 2P', cursive;;
     max-width: 800px;
   margin: 0 auto;
+  background-image: "https://www.wallpapertip.com/wmimgs/2-27987_free-pixel-wallpaper.jpg";
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
  header {
@@ -17,11 +21,24 @@ h1{
    max-width: 800px;
 }
 
-#hide {
-    display: none;
-}
 
 #logo {
     height: 30px;
     width: 30px;
+}
+
+
+#hide {
+    display: none;
+}
+
+#main {
+    background-image: url("./imgs/Project1PicTV.png");
+    width: 1200px;
+    height: 1200px;
+}
+
+i {
+    width: 50px;
+    height: 50px;
 }
