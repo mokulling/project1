@@ -1,4 +1,3 @@
-
 var searchField = $('#search_field')
 var goBtn = $('#search-button')
 var placeholderDiv = $('#plot')
