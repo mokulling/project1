@@ -68,3 +68,37 @@ for(var i = 0; i < 3; i++) {
 }
 })
 }
+
+
+var top10 = $('#top-10')
+var top10Btn = $('#10-btn')
+
+
+
+function top10Fun (){
+const listSettings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://rawg-video-games-database.p.rapidapi.com/games",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "7524861152msh237a3378b10e9bfp1a411ejsn270bb159b78f",
+		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+	}
+};
+
+$.ajax(listSettings).done(function (response) {
+	gameArray = response.results;
+	for (let i = 0; i < 10; i++) {
+		const currentGame = gameArray[i];
+		console.log(currentGame.name)
+		top10.append('<p>' + currentGame.name)
+		
+	}
+	
+
+		
+	
+});
+}
+top10Btn.on('click', top10Fun())
