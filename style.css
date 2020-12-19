@@ -11,7 +11,7 @@ body {
 
  header {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 70px;
 } 
 
 h1{
@@ -50,10 +50,55 @@ img:not(#logo) {
 }
 
 #scrollDiv {
-    width:100%px;
+    width:100%;
     height: auto;
 }
 .content {
     max-height: 500px;
     overflow: auto;
 }
+
+@media screen and (max-width: 480px) {
+    .grid {
+        display: block;
+    }
+    #scrollDiv {
+        width:80%; 
+    }
+    #firstPage {
+        width:80%; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid {
+        display: block;
+    }
+    #scrollDiv {
+        width:80%; 
+    }
+    #firstPage {
+        width:80%; 
+    }
+    .content {
+        max-height: 800px;
+    
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        display: block;
+    }
+    #scrollDiv {
+        width:80%;
+        /* margin-right: 15%;  */
+    }
+    #firstPage {
+        width:80%; 
+    }
+    .content {
+        max-height: 900px;
+    }
+}
+
