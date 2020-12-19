@@ -1,51 +1,104 @@
 body {
     font-family: 'Press Start 2P', cursive;;
     max-width: 800px;
-  margin: 0 auto;
-  background-image: "https://www.wallpapertip.com/wmimgs/2-27987_free-pixel-wallpaper.jpg";
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin-left: 15%;
+  background-image: url("imgs/Project1PicTV.png");
+  background-size: 100% 100%;
+  background-attachment: fixed;
 
+ 
 }
 
  header {
     text-align: center;
+    margin-top: 70px;
 } 
 
 h1{
     
     color: red;
+    margin-top: 20px;
 }
 
 .container {
    max-width: 800px;
-}
-
-
-#logo {
-    height: 30px;
-    width: 30px;
-}
+   margin-top: 40px;
+} 
 
 
 #hide {
     display: none;
 }
 
-#main {
-    background-image: url("./imgs/Project1PicTV.png");
-    width: 1200px;
-    height: 1200px;
+#logo {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 10px;
+    
 }
 
-i {
-    width: 50px;
-    height: 50px;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
+img:not(#logo) {
+    width: 30%;
+    height: auto;
+    float: left;
+    margin-right: 15px;
+}
 
-@media only screen and (max-width: 480px) {
-    body {
-      background-color: lightblue;
+#scrollDiv {
+    width:100%;
+    height: auto;
+}
+.content {
+    max-height: 500px;
+    overflow: auto;
+}
+
+@media screen and (max-width: 480px) {
+    .grid {
+        display: block;
     }
-  }
+    #scrollDiv {
+        width:80%; 
+    }
+    #firstPage {
+        width:80%; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid {
+        display: block;
+    }
+    #scrollDiv {
+        width:80%; 
+    }
+    #firstPage {
+        width:80%; 
+    }
+    .content {
+        max-height: 800px;
+    
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        display: block;
+    }
+    #scrollDiv {
+        width:80%;
+        /* margin-right: 15%;  */
+    }
+    #firstPage {
+        width:80%; 
+    }
+    .content {
+        max-height: 900px;
+    }
+}
+

@@ -9,35 +9,37 @@ const youtubeDiv = $("#youtube")
 const lastsearchDiv = $("#pGames")
 var input = ''
 var gameArray = JSON.parse(localStorage.getItem("prevGames")) || []
+var top10 = $('#top-10')
+var top10Btn = $('#10-btn')
 
 
-goBtn.on('click', function(event) {
+goBtn.on('click', function (event) {
     event.preventDefault()
     console.log(searchField.val())
     input = searchField.val()
-    inputStr= input.replace(/\s+/g, '-').toLowerCase()
+    inputStr = input.replace(/\s+/g, '-').toLowerCase()
     console.log(input)
     getInfo(input)
 })
-function getInfo (input) {
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://rawg-video-games-database.p.rapidapi.com/games/" + inputStr, 
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "7524861152msh237a3378b10e9bfp1a411ejsn270bb159b78f",
-		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
-	}
-};
-$.ajax(settings).then(function (response) {
-    console.log(!!response)
-    if(response.redirect) {
-        input = response.slug
-        inputStr= input.replace(/\s+/g, '-').toLowerCase()
-        getInfo()
-    }
-    else {
+function getInfo(input) {
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://rawg-video-games-database.p.rapidapi.com/games/" + inputStr,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "7524861152msh237a3378b10e9bfp1a411ejsn270bb159b78f",
+            "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+        }
+    };
+    $.ajax(settings).then(function (response) {
+        console.log(!!response)
+        if (response.redirect) {
+            input = response.slug
+            inputStr = input.replace(/\s+/g, '-').toLowerCase()
+            getInfo()
+        }
+        else {
             // console.log(response.description);
             //console.log(response.clip.clips.full)
             // console.log(response.background_image)
@@ -55,10 +57,10 @@ $.ajax(settings).then(function (response) {
         }
     }).catch(function (error) {
         pBox.empty()
-        if(error.status===404) {
+        if (error.status === 404) {
             pBox.append("Game " + error.statusText)
         }
-        else if (error.status>=500) {
+        else if (error.status >= 500) {
             pBox.append("Server Down, Please try again later")
         }
     });
@@ -75,7 +77,7 @@ function getYT() {
 }).then(function(response) {
     console.log(response);
 for(var i = 0; i < 3; i++) {
-    $(youtubeDiv).append('<div class="player"><iframe width="420" height="315" src="https://www.youtube.com/embed/' + response.items[i].id.videoId + '"frameborder="0" allowfullscreen></iframe></div>');
+    $(youtubeDiv).append('<div class="player"><iframe width="250" height="250" src="https://www.youtube.com/embed/' + response.items[i].id.videoId + '"frameborder="0" allowfullscreen></iframe></div>');
 }
 }).catch(function(error) {
     if (error.status===403) {
@@ -122,3 +124,27 @@ function getPastSearch(event){
 
 $(document).on("click",getPastSearch);
 addToList ()
+
+function top10Fun() {
+    const listSettings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://rawg-video-games-database.p.rapidapi.com/games",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "7524861152msh237a3378b10e9bfp1a411ejsn270bb159b78f",
+            "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+        }
+    };
+
+    $.ajax(listSettings).done(function (response) {
+        topGameArray = response.results;
+        top10.empty()
+        for (let i = 0; i < 10; i++) {
+            const currentGame = topGameArray[i];
+            console.log(currentGame.name)
+            top10.append('<p>' + currentGame.name)
+        }
+    });
+}
+$(top10Btn).on('click', top10Fun)
