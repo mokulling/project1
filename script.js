@@ -1,10 +1,12 @@
-var searchField = $('#search_field')
-var goBtn = $('#search-button')
-var placeholderDiv = $('#plot')
-var container =$('.container')
+const searchField = $('#search_field')
+const goBtn = $('#search-button')
+const placeholderDiv = $('#plot')
+const container =$('.container')
+const video= $('#video-space')
+const titleDiv =$('#title')
+const pBox =$('#p-box')
 var input = ''
-var video= $('#video-space')
-var titleDiv =$('#title')
+
 goBtn.on('click', function(event) {
     event.preventDefault()
     console.log(searchField.val())
@@ -25,17 +27,30 @@ const settings = {
 	}
 };
 $.ajax(settings).then(function (response) {
-    console.log(response)
-    console.log(response.description);
-    //console.log(response.clip.clips.full)
-    console.log(response.background_image)
-    console.log(response.released)
-    console.log(response.stores)
-    placeholderDiv.html(response.description)
-    video.html('<img src=' + response.background_image + '>' )
-    titleDiv.html(response.name) 
-    getYT()
-});
+    console.log(!!response)
+    if(response.redirect) {
+        input = response.slug
+        inputStr= input.replace(/\s+/g, '-').toLowerCase()
+        getInfo()
+    }
+    else {
+            // console.log(response.description);
+            //console.log(response.clip.clips.full)
+            // console.log(response.background_image)
+            // console.log(response.released)
+            // console.log(response.stores)
+            placeholderDiv.html(response.description)
+            video.html('<img src=' + response.background_image + '>' )
+            titleDiv.html(response.name) 
+            getYT()
+        }
+    }).catch(function (error) {
+        if(error.status===404) {
+            pBox.empty()
+            pBox.append("Game " + error.statusText)
+
+        }
+    });
 }
 
 
