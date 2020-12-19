@@ -45,10 +45,12 @@ $.ajax(settings).then(function (response) {
             getYT()
         }
     }).catch(function (error) {
+        pBox.empty()
         if(error.status===404) {
-            pBox.empty()
             pBox.append("Game " + error.statusText)
-
+        }
+        else if (error.status>=500) {
+            pBox.append("Server Down, Please try again later")
         }
     });
 }
