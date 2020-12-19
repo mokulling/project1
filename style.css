@@ -1,7 +1,7 @@
 body {
     font-family: 'Press Start 2P', cursive;;
     max-width: 800px;
-  margin: 0 auto;
+  margin-left: 15%;
   background-image: url("imgs/Project1PicTV.png");
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -22,9 +22,9 @@ h1{
 
 .container {
    max-width: 800px;
-   margin-top: 100px;
-  
+   margin-top: 40px;
 } 
+
 
 #hide {
     display: none;
@@ -35,4 +35,25 @@ h1{
     width: 40px;
     margin-bottom: 10px;
     
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+img:not(#logo) {
+    width: 30%;
+    height: auto;
+    float: left;
+    margin-right: 15px;
+}
+
+#scrollDiv {
+    width:100%px;
+    height: auto;
+}
+.content {
+    max-height: 500px;
+    overflow: auto;
 }

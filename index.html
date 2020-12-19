@@ -25,33 +25,41 @@
 
 
     <div class="container">
-        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam ducimus, repellendus atque perferendis
-            enim illo velit excepturi ad aliquid odit consequatur pariatur nobis! Vitae natus, dignissimos incidunt
-            perferendis suscipit magni.
-        </p>
+        <div id="firstPage">
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam ducimus, repellendus atque
+                perferendis
+                enim illo velit excepturi ad aliquid odit consequatur pariatur nobis! Vitae natus, dignissimos incidunt
+                perferendis suscipit magni.
+            </p>
 
-        <div class="nes-field row">
+            <div class="nes-field row">
 
-            <label for="name_field">Search our game library
-                <!-- youtube -->
-                <i class="nes-icon youtube is-large"></i>
-            </label>
-            <input type="text" id="search_field" class="nes-input" placeholder="Search here">
-            <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
+                <label for="name_field">Search our game library
+                    <!-- youtube -->
+                    <i class="nes-icon youtube is-large"></i>
+                </label>
+                <input type="text" id="search_field" class="nes-input" placeholder="Search here">
+                <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
+
+            </div>
         </div>
 
+        <div id="scrollDiv">
+            <div class="content">
+                <h3 id="title"></h3>
+                <div id="video-space"></div>
+                <div id="plot"></div>
+                <div class="grid" id="youtube"></div>
+                <div>
+                    <button type="button" class="nes-btn is-success">Top 10 List:</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="title"></div>
-    <div id="video-space"></div>
-    <div id="plot"></div>
-    <div id="youtube"></div>
+
     <!-- <div id="vidList"></div> -->
 
-    <div>
-        <button type="button" class="nes-btn is-success">Top 10 List:</button>
-    </div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
