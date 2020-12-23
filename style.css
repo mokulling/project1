@@ -1,17 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Press Start 2P', cursive;;
     max-width: 800px;
   margin-left: 15%;
   background-image: url("imgs/Project1PicTV.png");
-  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-
+  background-size: cover;
  
 }
 
  header {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 30px;
 } 
 
 h1{
@@ -22,13 +27,8 @@ h1{
 
 .container {
    max-width: 800px;
-   margin-top: 40px;
+   margin-top: 10px;
 } 
-
-
-#hide {
-    display: none;
-}
 
 #logo {
     height: 40px;
@@ -54,7 +54,7 @@ img:not(#logo) {
     height: auto;
 }
 .content {
-    max-height: 500px;
+    max-height: 350px;
     overflow: auto;
 }
 
@@ -63,11 +63,20 @@ img:not(#logo) {
         display: block;
     }
     #scrollDiv {
-        width:80%; 
+        width:30%; 
     }
     #firstPage {
-        width:80%; 
+        width:30%; 
     }
+    #search_field {
+        width: 30%;
+    }
+    body {
+        background-image: url(imgs/ProjectPicGB.png) ;
+    }
+    .container {max-width: 200px;
+    margin-left: 60px;
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -75,18 +84,22 @@ img:not(#logo) {
         display: block;
     }
     #scrollDiv {
-        width:80%; 
+        width:30%; 
     }
     #firstPage {
-        width:80%; 
+        width:100%; 
     }
     .content {
         max-height: 800px;
     
     }
+    #search_field {
+        width: 60%;
+    }
+  
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1124px) {
     .grid {
         display: block;
     }
@@ -100,5 +113,80 @@ img:not(#logo) {
     .content {
         max-height: 900px;
     }
+    #search_field {
+        width: 60%;
+    }
 }
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 780px;
+    max-width: 80%;
+}
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modal-header .title{
+    font-size: 1.25 rem;
+    font-weight: bold;
+}
+.modal-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-body {
+    padding: 10px 5px;
+}
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.player {
+    margin: 3px;
+}
+
+.nes-btn:not(#search-button) {
+    display: none;
+}
+
+#alert {
+    display: none;
+}
+
+#twoBtns {
+    display: inline;
+}
+
+
 
