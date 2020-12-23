@@ -1,20 +1,19 @@
 const searchField = $('#search_field')
 const goBtn = $('#search-button')
 const placeholderDiv = $('#plot')
-const container =$('.container')
-const video= $('#video-space')
-const titleDiv =$('#title')
-const pBox =$('#p-box')
+const container = $('.container')
+const video = $('#video-space')
+const titleDiv = $('#title')
+const pBox = $('#p-box')
 const youtubeDiv = $("#youtube")
 const lastsearchDiv = $("#pGames")
 var input = ''
 var gameArray = JSON.parse(localStorage.getItem("prevGames")) || []
 var top10 = $('#top-10')
 var top10Btn = $('#10-btn')
-
-
 goBtn.on('click', function (event) {
     event.preventDefault()
+    pBox.empty()
     console.log(searchField.val())
     input = searchField.val()
     inputStr = input.replace(/\s+/g, '-').toLowerCase()
@@ -46,85 +45,77 @@ function getInfo(input) {
             // console.log(response.released)
             // console.log(response.stores)
             placeholderDiv.html(response.description)
-            video.html('<img src=' + response.background_image + '>' )
+            video.html('<img src=' + response.background_image + '>')
             title = response.name
-            titleDiv.html(title) 
+            titleDiv.html(title)
             removeDuplicates
             gameArray.push(title)
-            
-            addToList ()
+            addToList()
             getYT()
+            $('#yBtn').show()
+            $(top10Btn).show()
         }
     }).catch(function (error) {
-        pBox.empty()
+        $('#alert').show()
         if (error.status === 404) {
-            pBox.append("Game " + error.statusText)
+            $('#balloon').append("Game " + error.statusText)
         }
         else if (error.status >= 500) {
-            pBox.append("Server Down, Please try again later")
+            $('#balloon').append("Server Down, Please try again later")
         }
     });
 }
-
-
 function getYT() {
     youtubeDiv.empty()
     var userInput = input
     var queryURL = "https://www.googleapis.com/youtube/v3/search? + key + part=snippet&key=AIzaSyBBH_0h56NUXY4VCpcQTIe1TB0W9ngehfY&type=video&q=" + userInput
     $.ajax({
-        url:queryURL,
-        method:"GET",
-}).then(function(response) {
-    console.log(response);
-for(var i = 0; i < 3; i++) {
-    $(youtubeDiv).append('<div class="player"><iframe width="250" height="250" src="https://www.youtube.com/embed/' + response.items[i].id.videoId + '"frameborder="0" allowfullscreen></iframe></div>');
+        url: queryURL,
+        method: "GET",
+    }).then(function (response) {
+        console.log(response);
+        for (var i = 0; i < 3; i++) {
+            $(youtubeDiv).append('<div class="player"><iframe width="250" height="250" src="https://www.youtube.com/embed/' + response.items[i].id.videoId + '"frameborder="0" allowfullscreen></iframe></div>');
+        }
+    }).catch(function (error) {
+        if (error.status === 403) {
+            youtubeDiv.text("youtube quota is full, please try again tomorrow")
+        }
+    })
 }
-}).catch(function(error) {
-    if (error.status===403) {
-        youtubeDiv.text("youtube quota is full, please try again tomorrow")
-    }
-})
-}
-
-
-function addToList () {
+function addToList() {
     removeDuplicates()
     JSON.parse(localStorage.getItem("prevGames"))
-    for(var i = 0; i<gameArray.length; i++) {
-    var glist = $('<li>' + gameArray[i]+"</li>")
-    lastsearchDiv.prepend(glist)
-}}
-
-function removeDuplicates () {
-    gameArrayUnique = gameArray.filter(
-        function(a) {if (!this[a]) {this[a] = 1; return a;}},{}
-        
-        )
-        gameArray = gameArrayUnique
-        maxGameArray ()
-        localStorage.setItem('prevGames', JSON.stringify(gameArray))
-        lastsearchDiv.empty()
+    for (var i = 0; i < gameArray.length; i++) {
+        var glist = $('<li>' + gameArray[i] + "</li>")
+        lastsearchDiv.prepend(glist)
+    }
 }
-
-function maxGameArray () {
-    if(gameArray.length === 5) {
+function removeDuplicates() {
+    gameArrayUnique = gameArray.filter(
+        function (a) { if (!this[a]) { this[a] = 1; return a; } }, {}
+    )
+    gameArray = gameArrayUnique
+    maxGameArray()
+    localStorage.setItem('prevGames', JSON.stringify(gameArray))
+    lastsearchDiv.empty()
+}
+function maxGameArray() {
+    if (gameArray.length === 5) {
         gameArray.shift()
     }
 }
-
-function getPastSearch(event){
-    var target=event.target;
-    if (event.target.matches("li")){
-        input=target.textContent.trim(2);
+function getPastSearch(event) {
+    var target = event.target;
+    if (event.target.matches("li")) {
+        input = target.textContent.trim(2);
         inputStr = input.replace(/\s+/g, '-').toLowerCase()
         getInfo();
+        pBox.empty()
     }
 }
-
-
-$(document).on("click",getPastSearch);
-addToList ()
-
+$(document).on("click", getPastSearch);
+addToList()
 function top10Fun() {
     const listSettings = {
         "async": true,
@@ -136,15 +127,39 @@ function top10Fun() {
             "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
         }
     };
-
     $.ajax(listSettings).done(function (response) {
         topGameArray = response.results;
         top10.empty()
         for (let i = 0; i < 10; i++) {
             const currentGame = topGameArray[i];
             console.log(currentGame.name)
-            top10.append('<p>' + currentGame.name)
+            top10.append('<li>' + currentGame.name)
         }
     });
 }
 $(top10Btn).on('click', top10Fun)
+const openModalButtons = document.querySelectorAll("[data-modal-target]")
+const closeModalButtons = document.querySelectorAll("[data-close-button]")
+const overlay = document.getElementById("overlay")
+openModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+closeModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modal = button.closest('.modal')
+        closeModal(modal)
+    })
+})
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}

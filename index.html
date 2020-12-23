@@ -30,6 +30,19 @@
                 perferendis suscipit magni.
             </p>
 
+            <!--Ballon for Alert-->
+            <div class="row" id="alert">
+                <div class="col-sm-9 col-xs-12">
+                    <div class="nes-balloon from-left">
+                        <p style="color: #ff0000"><span id="balloon"></span></p>
+                    </div>
+                    <div class="col">
+                        <i class="nes-bcrikko"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
             <div class="nes-field row">
 
                 <label for="name_field">Search our game library
@@ -60,25 +73,51 @@
         </div>
     </div>
 
+        <div class="nes-field">
+            <label for="name_field">Search for game:
+                <!-- youtube -->
+                <i class="nes-icon youtube is-small"></i>
+            </label>
+            <input type="text" id="search_field" class="nes-input" placeholder="Search here">
+            <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
+        </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-            crossorigin="anonymous"></script>
 
-        <div id="title"></div>
+    <div class="lists">
+        <ul class="nes-list is-disc" id="pGames"></ul>
+    </div>
+
+    <div class="content" id="scrollDiv">
+        <h3 id="title"></h3>
         <div id="video-space"></div>
         <div id="plot"></div>
-        <div id="youtube"></div>
+        <!-- <div class="grid" id="youtube"></div> -->
 
-        <div>
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">Videos:</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="grid" id="youtube"></div>
+            </div>
+        </div>
+        <div id="overlay"></div>
+        <div id=twoBtns>
+            <button type="button" data-modal-target="#modal" class="nes-btn is-primary" id="yBtn">Youtube</button>
             <button id="10-btn" type="button" class="nes-btn is-success">Top 10 List:</button>
-            <div id="top-10"></div>
+            <div class="lists">
+                <ul class="nes-list is-circle" id="top-10"></ul>
+            </div>
         </div>
-        </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+
 
         <script src="script.js"></script>
 </body>
