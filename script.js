@@ -12,6 +12,7 @@ var gameArray = JSON.parse(localStorage.getItem("prevGames")) || []
 var top10 = $('#top-10')
 var top10Btn = $('#10-btn')
 goBtn.on('click', function (event) {
+    $('#alert').hide()
     event.preventDefault()
     pBox.empty()
     console.log(searchField.val())
@@ -113,6 +114,7 @@ function getPastSearch(event) {
         $("#balloon").empty()
         pBox.empty()
         getInfo();
+        $('#alert').hide()
     }
 }
 $(document).on("click", getPastSearch);
