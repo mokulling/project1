@@ -6,7 +6,7 @@
     <title>WikiGames</title>
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nes.css/2.0.0/css/nes.min.css" integrity="sha512-yLfn7V0hubHgkT9/iqdUZI5uyhxIXobm6WynYpG0zRdUnDzH2DkaajPJ05CLjHVCX7RjX4UFw6ypW7sXPIr97Q==" crossorigin="anonymous" />
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
    
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -38,24 +38,25 @@
         <div id="title"></div>
         <div id="video-space"></div>
         <div id="plot"></div>
-        <div id="youtube"></div>
+        
         <!-- <div id="vidList"></div> -->
 
     <div>
-    <button type="button" class="nes-btn is-success">Top 10 List:</button>
+    <button id="10-btn" type="button" class="nes-btn is-success">Top 10 List:</button>
+    <div id="top-10"></div>
     </div>
     </div>  
     
-    <button type="button" data-modal-target="#modal" class="nes-btn is-primary">Modal Button</button>
+    <button type="button" data-modal-target="#modal" class="nes-btn is-primary">Youtube</button>
     <div class="modal" id="modal">
 
         <div class="modal-header">
-            <div class="title">Modal Title</div>
+            <div class="title">Videos:</div>
             <button data-close-button class="close-button">&times;</button>
         </div>
             
         <div class="modal-body">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, a repudiandae! Odio numquam itaque, quas asperiores id sint incidunt dolor atque minima consequatur debitis, velit aliquid natus exercitationem odit nisi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, a repudiandae! Odio numquam itaque, quas asperiores id sint incidunt dolor atque minima consequatur debitis, velit aliquid natus exercitationem odit nisi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, a repudiandae! Odio numquam itaque, quas asperiores id sint incidunt dolor atque minima consequatur debitis, velit aliquid natus exercitationem odit nisi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, a repudiandae! Odio numquam itaque, quas asperiores id sint incidunt dolor atque minima consequatur debitis, velit aliquid natus exercitationem odit nisi. 
+            <div id="youtube"></div>
         </div>
     </div>
     <div id="overlay"></div>
