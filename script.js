@@ -11,17 +11,15 @@ var input = ''
 var gameArray = JSON.parse(localStorage.getItem("prevGames")) || []
 var top10 = $('#top-10')
 var top10Btn = $('#10-btn')
-
-
 goBtn.on('click', function (event) {
     event.preventDefault()
     pBox.empty()
     console.log(searchField.val())
     input = searchField.val()
     inputStr = input.replace(/\s+/g, '-').toLowerCase()
-    console.log(input)
+    // console.log(input)
+    $("#balloon").empty()
     getInfo(input)
-
 })
 function getInfo(input) {
     const settings = {
@@ -53,13 +51,11 @@ function getInfo(input) {
             titleDiv.html(title)
             removeDuplicates
             gameArray.push(title)
-
             addToList()
             getYT()
             $('#yBtn').show()
         }
     }).catch(function (error) {
-
         $('#alert').show()
         if (error.status === 404) {
             $('#balloon').append("Game " + error.statusText)
@@ -69,8 +65,6 @@ function getInfo(input) {
         }
     });
 }
-
-
 function getYT() {
     youtubeDiv.empty()
     var userInput = input
@@ -79,7 +73,7 @@ function getYT() {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
-        console.log(response);
+        // console.log(response);
         for (var i = 0; i < 3; i++) {
             $(youtubeDiv).append('<div class="player"><iframe width="250" height="250" src="https://www.youtube.com/embed/' + response.items[i].id.videoId + '"frameborder="0" allowfullscreen></iframe></div>');
         }
@@ -89,8 +83,6 @@ function getYT() {
         }
     })
 }
-
-
 function addToList() {
     removeDuplicates()
     JSON.parse(localStorage.getItem("prevGames"))
@@ -99,38 +91,32 @@ function addToList() {
         lastsearchDiv.prepend(glist)
     }
 }
-
 function removeDuplicates() {
     gameArrayUnique = gameArray.filter(
         function (a) { if (!this[a]) { this[a] = 1; return a; } }, {}
-
     )
     gameArray = gameArrayUnique
     maxGameArray()
     localStorage.setItem('prevGames', JSON.stringify(gameArray))
     lastsearchDiv.empty()
 }
-
 function maxGameArray() {
     if (gameArray.length === 5) {
         gameArray.shift()
     }
 }
-
 function getPastSearch(event) {
     var target = event.target;
     if (event.target.matches("li")) {
         input = target.textContent.trim(2);
-        inputStr = input.replace(/\s+/g, '-').toLowerCase()
-        getInfo();
+        inputStr = input.replace(/\s+/g, '-').replace(/:|!/g,'').toLowerCase()
+        $("#balloon").empty()
         pBox.empty()
+        getInfo();
     }
 }
-
-
 $(document).on("click", getPastSearch);
 addToList()
-
 function top10Fun() {
     const listSettings = {
         "async": true,
@@ -142,7 +128,6 @@ function top10Fun() {
             "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
         }
     };
-
     $.ajax(listSettings).done(function (response) {
         topGameArray = response.results;
         top10.empty()
@@ -154,7 +139,6 @@ function top10Fun() {
     });
 }
 $(top10Btn).on('click', top10Fun)
-
 const openModalButtons = document.querySelectorAll("[data-modal-target]")
 const closeModalButtons = document.querySelectorAll("[data-close-button]")
 const overlay = document.getElementById("overlay")
@@ -180,26 +164,3 @@ function closeModal(modal) {
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
