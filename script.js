@@ -57,7 +57,6 @@ function getInfo(input) {
             addToList()
             getYT()
             $('#yBtn').show()
-            $(top10Btn).show()
         }
     }).catch(function (error) {
 

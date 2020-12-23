@@ -176,16 +176,16 @@ img:not(#logo) {
     margin: 3px;
 }
 
-.nes-btn:not(#search-button) {
-    display: none;
-}
+/* .nes-btn:not(#search-button) {
+    display: none; */
+/* } */
 
 #alert {
     display: none;
 }
 
-#twoBtns {
-    display: inline;
+#yBtn {
+    display: none;
 }
 
 

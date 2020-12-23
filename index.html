@@ -52,17 +52,19 @@
             <input type="text" id="search_field" class="nes-input" placeholder="Search here">
             <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
         </div>
-    </div>
-
-    <div class="lists">
-        <ul class="nes-list is-disc" id="pGames"></ul>
+        <div class="lists">
+            <ul class="nes-list is-disc" id="pGames"></ul>
+        </div>
+        <button id="10-btn" type="button" class="nes-btn is-success">Top 10 List:</button>
+        <div class="lists">
+            <ul class="nes-list is-circle" id="top-10"></ul>
+        </div>
     </div>
 
     <div class="content" id="scrollDiv">
         <h3 id="title"></h3>
         <div id="video-space"></div>
         <div id="plot"></div>
-        <!-- <div class="grid" id="youtube"></div> -->
 
         <div class="modal" id="modal">
             <div class="modal-header">
@@ -74,12 +76,8 @@
             </div>
         </div>
         <div id="overlay"></div>
-        <div id=twoBtns>
+        <div>
             <button type="button" data-modal-target="#modal" class="nes-btn is-primary" id="yBtn">Youtube</button>
-            <button id="10-btn" type="button" class="nes-btn is-success">Top 10 List:</button>
-            <div class="lists">
-                <ul class="nes-list is-circle" id="top-10"></ul>
-            </div>
         </div>
     </div>
 
