@@ -1,49 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WikiGames</title>
 
-    
+
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-   
+
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
+
 <body>
     <header>
-        <h1>Wikigames</h1>
-        <img src="./imgs/Project1Pic.png" alt="retro-logo" id="logo">
+        <h1>Wik<span><img src="./imgs/Project1Pic.png" alt="retro-logo" id="logo"></span>games</h1>
+
     </header>
 
-    
 
-    <div class="container">  
-        <p id="p-box"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam ducimus, repellendus atque perferendis enim illo velit excepturi ad aliquid odit consequatur pariatur nobis! Vitae natus, dignissimos incidunt perferendis suscipit magni.
-        </p>
-        
-        <div class="nes-field row">
-            
-            <label for="name_field">Search our game library <!-- youtube -->
-                <i class="nes-icon youtube is-large"></i>
-              </label>
-            <input type="text" id="search_field" class="nes-input" placeholder="Search here">
-            <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
+
+    <div class="container">
+        <div id="firstPage">
+            <p id="p-box"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam ducimus, repellendus atque
+                perferendis
+                enim illo velit excepturi ad aliquid odit consequatur pariatur nobis! Vitae natus, dignissimos incidunt
+                perferendis suscipit magni.
+            </p>
+
+            <div class="nes-field row">
+
+                <label for="name_field">Search our game library
+                    <!-- youtube -->
+                    <i class="nes-icon youtube is-large"></i>
+                </label>
+                <input type="text" id="search_field" class="nes-input" placeholder="Search here">
+                <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
+
+            </div>
         </div>
 
+        <div>
+            <ul id="pGames">
+
+            </ul>
+        </div>
+
+
+        <div id="scrollDiv">
+            <div class="content">
+                <h3 id="title"></h3>
+                <div id="video-space"></div>
+                <div id="plot"></div>
+                <div class="grid" id="youtube"></div>
+                <div>
+            </div>
+        </div>
     </div>
-    
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+
         <div id="title"></div>
         <div id="video-space"></div>
         <div id="plot"></div>
         
         <!-- <div id="vidList"></div> -->
 
-    <div>
-    <button id="10-btn" type="button" class="nes-btn is-success">Top 10 List:</button>
-    <div id="top-10"></div>
+   
     </div>
     </div>  
     
@@ -61,6 +89,17 @@
     </div>
     <div id="overlay"></div>
 
+    <div id="youtube"></div>
+
+        <div>
+            <button id="10-btn" type="button" class="nes-btn is-success">Top 10 List:</button>
+            <div id="top-10"></div>
+        </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     
@@ -68,4 +107,7 @@
 </body>
 </html>
 
+        <script src="script.js"></script>
+</body>
 
+</html>
