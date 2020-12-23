@@ -12,12 +12,14 @@ var gameArray = JSON.parse(localStorage.getItem("prevGames")) || []
 var top10 = $('#top-10')
 var top10Btn = $('#10-btn')
 goBtn.on('click', function (event) {
+    $('#alert').hide()
     event.preventDefault()
     pBox.empty()
     console.log(searchField.val())
     input = searchField.val()
     inputStr = input.replace(/\s+/g, '-').toLowerCase()
-    console.log(input)
+    // console.log(input)
+    $("#balloon").empty()
     getInfo(input)
 })
 function getInfo(input) {
@@ -73,7 +75,7 @@ function getYT() {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
-        console.log(response);
+        // console.log(response);
         for (var i = 0; i < 3; i++) {
             $(youtubeDiv).append('<div class="player"><iframe width="250" height="250" src="https://www.youtube.com/embed/' + response.items[i].id.videoId + '"frameborder="0" allowfullscreen></iframe></div>');
         }
@@ -109,9 +111,11 @@ function getPastSearch(event) {
     var target = event.target;
     if (event.target.matches("li")) {
         input = target.textContent.trim(2);
-        inputStr = input.replace(/\s+/g, '-').toLowerCase()
-        getInfo();
+        inputStr = input.replace(/\s+/g, '-').replace(/:|!/g,'').toLowerCase()
+        $("#balloon").empty()
         pBox.empty()
+        getInfo();
+        $('#alert').hide()
     }
 }
 $(document).on("click", getPastSearch);

@@ -158,9 +158,9 @@ img:not(#logo) {
     margin: 3px;
 }
 /* remove yt and bg */
-.nes-btn:not(#search-button) {
+/* .nes-btn:not(#search-button) {
     display: none;
-}
+} */
 #alert {
     display: none;
 }
