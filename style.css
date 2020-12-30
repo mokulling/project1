@@ -157,6 +157,7 @@ img:not(#logo) {
 .player {
     margin: 3px;
 }
+<<<<<<< HEAD
 /* remove yt and bg */
 /* .nes-btn:not(#search-button) {
     display: none;
@@ -167,3 +168,20 @@ img:not(#logo) {
 #twoBtns {
     display: inline;
 }
+=======
+
+/* .nes-btn:not(#search-button) {
+    display: none; */
+/* } */
+
+#alert {
+    display: none;
+}
+
+#yBtn {
+    display: none;
+}
+
+
+
+>>>>>>> 17d912f59336347f0a77f09bebd04b7ce938cf1a
