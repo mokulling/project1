@@ -5,11 +5,13 @@ body {
     font-family: 'Press Start 2P', cursive;;
     max-width: 800px;
   margin-left: 15%;
-  background-image: url("imgs/Project1PicTV.png");
+  background-image: url("imgs/Project1PicTV.png");position:absolute;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+ 
+  
 }
  header {
     text-align: center;
@@ -156,6 +158,7 @@ img:not(#logo) {
     background-color: white;
     width: 780px;
     max-width: 80%;
+    color:black;
 }
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
@@ -181,6 +184,7 @@ img:not(#logo) {
 }
 .modal-body {
     padding: 10px 5px;
+    font: black ;
 }
 #overlay {
     position: fixed;
@@ -209,3 +213,4 @@ img:not(#logo) {
 #yBtn {
     display: none;
 }
+

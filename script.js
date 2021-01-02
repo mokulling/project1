@@ -168,3 +168,5 @@ function closeModal(modal) {
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
+$(window).on('load', addNoise);
+
