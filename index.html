@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
-
 <body>
     <header>
         <h1>Wik<span><img src="./imgs/Project1Pic.png" alt="retro-logo" id="logo"></span>games</h1>
@@ -32,29 +30,23 @@
                 </div>
             </div>
         </div>
-
-
+        <button id="10-btn" data-modal-target="#modal1" type="button" class="nes-btn is-success">Top 10 List:</button>
         <div class="nes-field">
             <label for="name_field">Search for game:
                 <i class="nes-icon youtube is-small"></i>
             </label>
             <input type="text" id="search_field" class="nes-input" placeholder="Search here">
             <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
-            <button id="10-btn" type="button" class="nes-btn is-success">Top 10 List:</button>
-        </div>
-        <div class="lists">
-            <ul class="nes-list is-disc" id="pGames"></ul>
-        </div>
-
-        <div class="lists">
-            <ul class="nes-list is-circle" id="top-10"></ul>
         </div>
     </div>
-
+    <div class="lists">
+        <ul class="nes-list is-disc" id="pGames"></ul>
+    </div>
     <div class="content" id="scrollDiv">
         <h3 id="title"></h3>
         <div id="video-space"></div>
         <div id="plot"></div>
+        <!-- <div class="grid" id="youtube"></div> -->
         <div class="modal" id="modal">
             <div class="modal-header">
                 <div class="title">Videos:</div>
@@ -64,9 +56,24 @@
                 <div class="grid" id="youtube"></div>
             </div>
         </div>
+
+        <div class="modal" id="modal1">
+            <div class="modal-header">
+                <div class="title">Top 10:</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="grid" class="nes-list is-circle" id="top-10"></div>
+            </div>
+        </div>
+
         <div id="overlay"></div>
-        <div>
+        <div id=twoBtns>
             <button type="button" data-modal-target="#modal" class="nes-btn is-primary" id="yBtn">Youtube</button>
+            
+            <!-- <div class="lists">
+                <ul class="nes-list is-circle" id="top-10"></ul>
+            </div> -->
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -74,5 +81,4 @@
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
