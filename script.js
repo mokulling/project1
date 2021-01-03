@@ -22,10 +22,7 @@ goBtn.on('click', function (event) {
 })
 function getInfo(input) {
     $("body").attr("id", 'tv');
-$("body").css("color", "white")
-if(window.innerWidth < 480) {
-$("h1").css("display", "none")
-}
+$("body").css("color", "white");
     const settings = {
         "async": true,
         "crossDomain": true,

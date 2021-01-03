@@ -12,8 +12,8 @@
     <header>
         <h1>Wik<span><img src="./imgs/Project1Pic.png" alt="retro-logo" id="logo"></span>games</h1>
     </header>
-    <p id="p-box">WikiGames is a video game search engine to find a game that you are interested in.  It will give you access to a breif description of the game along with a few youtube videos of gameplay.
-    </p>
+    <div id="article">
+        <div id="searchbar">
     <div class="container">
         <div id="firstPage">
            
@@ -35,14 +35,17 @@
             </label>
             <input type="text" id="search_field" class="nes-input" placeholder="Search here">
             <button type="button" class="nes-btn is-primary" id="search-button">GO!</button>
-            <button id="10-btn" data-modal-target="#modal1" type="button" class="nes-btn is-success">Top 10 List:</button>
+            <button id="10-btn" data-modal-target="#modal1" type="button" class="nes-btn is-success">Top 10</button>
             </div>
             
-    </div>
-    <div class="lists">
-        <ul class="nes-list is-disc" id="pGames"></ul>
+        </div>
+        <div class="lists">
+            <ul class="nes-list is-disc" id="pGames"></ul>
+        </div>
     </div>
     <div class="content" id="scrollDiv">
+        <p id="p-box">WikiGames is a video game search engine to find a game that you are interested in.  It will give you access to a breif description of the game along with a few youtube videos of gameplay.
+        </p>
         <h3 id="title"></h3>
         <div id="video-space"></div>
         <div id="plot"></div>
@@ -55,6 +58,8 @@
                 <div class="grid" id="youtube"></div>
             </div>
         </div>
+
+       
 
         <div class="modal" id="modal1">
             <div class="modal-header">
@@ -71,6 +76,10 @@
             <button type="button" data-modal-target="#modal" class="nes-btn is-primary" id="yBtn">Youtube</button>
             
         </div>
+    </div>
+</div>
+    <div id="footer">
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="

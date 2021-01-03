@@ -2,14 +2,19 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+    width:100%;
+}
+
 body {
     font-family: 'Press Start 2P', cursive;;
-    max-width: 1200px;
-  margin-left: 15%;
+    height: 100%;
+  margin-left: 10%;
 }
 
 .nes-field {
- width: 80%;
+ width: 75%;
 }
 
 #tv {
@@ -20,17 +25,16 @@ body {
     background-size: cover;
 }
 
- header {
-    text-align: center;
-    margin-top: 30px;
-} 
 h1{
     color: red;
+    text-align: center;
+    margin-top: 30px;
 }
 .container {
-   max-width: 1200px;
+   max-width: 100%;
    margin-top: 10px;
 } 
+
 #logo {
     height: 40px;
     width: 40px;
@@ -47,117 +51,13 @@ img:not(#logo) {
     margin-right: 15px;
 }
 #scrollDiv {
-    width:80%;
-    height: auto;
-height: 480px
+    width:75%;
+height: 400px
 }
 .content {
     max-height: 580px;
     overflow: auto;
 }
-@media screen and (max-width: 480px) {
-    img:not(#logo){
-width: 99%;
-
-    }
-    body{
-        margin-left: 0;
-    }
-    h1 {
-        margin-top: 10px;
-    }
-    #pGames{
-        display: none;
-    }
-    #10-btn{
-        display:inline-block;
-    }
-
-    #search-button{
-        display:inline;
-    }
-    button{
-        height: 35px;
-    }
-.nes-field {
-    display:inline-block;
-    width: 55%;
-}
-#search_field, #search {
-    margin:0;
-}
-#alert{
-    display: block;
-}
-.nes-bcrikko {
-  display: none;
-}
-
-
-.nes-balloon{
-   height: 30px;
-   float: right;
-   margin-left: 0;
-   margin-right: 0;
-   width: 45%;
-   
-}
-    #search_field {
-        width: 90%;
-    }
-    #tv {
-        background-image: url("imgs/Project1PicGB.jpg")
-    }
-    .container {
-    font-size: 10px;
-    margin-left: 0;
-    height: 100px;
-    border: 1px dotted black;
-    margin-left: 0;
-    margin-top: 0;
-    overflow: scroll;
-    }
-    #scrollDiv {
-        font-size: 10px;
-        width: 65%;
-        margin-left: 80px;
-        margin-top: 10px;
-        height: 500px;
-    }
-    .player {
-        width: 150px;
-    }
-    iframe {
-        width: 150px;
-        height: 100px;
-    }
-    #youtube {
-        width: 150px;
-    }
-    #modal {
-        width: 170px;
-    }
-    .grid {
-        display: inline-block;
-    }                                                    
-}
-
-@media screen and (max-width: 450px) {
-    #scrollDiv {
-        height: 430px;
-    }
-    img:not(#logo){
-        width: 90%; 
-            }
-
-}
-@media screen and (max-width: 400px) {
-    #scrollDiv {
-        height: 300px;
-        margin-left: 70px;
-    }
-}
-
 
 .modal {
     position: fixed;
@@ -223,4 +123,129 @@ width: 99%;
 #yBtn {
     display: none;
 }
+
+
+@media screen and (max-width: 800px) {
+    #scrollDiv{
+        width: 90%;
+    }}
+
+@media screen and (max-width: 480px) {
+    #tv{
+        background-image: none;
+    }
+    button{
+        margin-left: 0;
+    }
+    header {
+        margin-top: 0;
+    }
+    body{
+        color: white;
+    }
+    img:not(#logo){
+width: 99%;
+    }
+    h1{
+        display: none;
+    }
+    body{
+        margin-left: 0;
+    }
+    h1 {
+        margin-top: 10px;
+    }
+    #pGames{
+        display: none;
+    }
+
+    button{
+        height: 30px;
+    }
+.nes-field {
+    display:inline-block;
+    width: 55%;
+    margin-top: 14px;
+    font-size: 11px;
+    font-weight: bolder;
+}
+#search_field, #search {
+    margin:0;
+}
+#alert{
+    display: block;
+}
+.nes-bcrikko {
+  display: none;
+}
+
+
+.nes-balloon{
+   height: 30px;
+   float: right;
+   margin-left: 0;
+   margin-right: 0;
+   width: 45%;
+   
+}
+    #search_field {
+        width: 90%;
+    }
+    
+    .container {
+        background-image: url("imgs/GBHeader.png");
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-size: 10px;
+    margin-left: 0;
+    margin-top: 0;
+    overflow: scroll;
+    }
+
+    #footer{
+        background-image: url("imgs/GBfooter.png");
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    }
+    #scrollDiv {
+        background-image: url("imgs/GBbody.png");
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+        font-size: 10px;
+        padding-left: 90px;
+        padding-right: 90px;
+        width: 100%;
+        height: 1000px;
+    }
+    .player {
+        width: 150px;
+    }
+    iframe {
+        width: 150px;
+        height: 100px;
+    }
+    #youtube {
+        width: 150px;
+    }
+    #modal {
+        width: 170px;
+    }
+    .grid {
+        display: inline-block;
+    }                                                    
+}
+
+@media screen and (max-width: 380px) {
+    #scrollDiv{
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+}
+
 
