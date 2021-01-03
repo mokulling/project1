@@ -162,3 +162,4 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
+$('#alert').hide()
