@@ -1,21 +1,17 @@
-# project1
+# Project 1 - Wikigames
 
-front page
--title 
--search input
--maybe button for top 10 lists
--logo work
+### By Matt Kulling, Nicholas Vrtis, Mohammad Ali Karimi, and Zac Jayes
 
-action page
--tv overlay/gameboy overlay
--api call and recieve for game api and twitch api
---input search will send an API call to the game API
---recieve title, plot, rating, buy here etc
---during gameAPI search will trigger twitch API to find the game there as well
---api will need to create elements and append them
--need an IF statment if search result is not found
 
-styling
--nes styling
--simple grid
+# What it does
+
+Wikigames allows users to search from a wide range of games and receive back an image of the game, a brief description, and a YouTube playlist of gameplay so that users cna make an informed buying decision, or reminisce about their favorite retro games from the past. This website uses the RAWG games API for the game description and image, and the YouTube API for the YouTube modal and playlist. 
+
+# Link to application
+
+https://mokulling.github.io/wikigames/
+
+# Screenshot of application
+
+![](screenshot.png)
 
