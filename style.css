@@ -1,15 +1,20 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Press Start 2P', cursive;;
     max-width: 1200px;
   margin-left: 15%;
 }
 
+.nes-field {
+ width: 80%;
+}
+
 #tv {
-    background-image: url("imgs/Project1PicTV.png");
-    background-position: center center;
+    background-image: url("imgs/Project1PicTV.png"), url("imgs/GreenStatic.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -21,7 +26,6 @@ body {
 } 
 h1{
     color: red;
-    margin-top: 20px;
 }
 .container {
    max-width: 1200px;
@@ -43,43 +47,82 @@ img:not(#logo) {
     margin-right: 15px;
 }
 #scrollDiv {
-    width:100%;
+    width:80%;
     height: auto;
+height: 480px
 }
 .content {
-    max-height: 350px;
+    max-height: 580px;
     overflow: auto;
 }
 @media screen and (max-width: 480px) {
+    img:not(#logo){
+width: 99%;
+
+    }
+    body{
+        margin-left: 0;
+    }
     h1 {
         margin-top: 10px;
     }
-    /* .content {
-        max-height: 180px;
-        margin-right: 100px;
-        width: 20%;
-    } */
+    #pGames{
+        display: none;
+    }
+    #10-btn{
+        display:inline-block;
+    }
+
+    #search-button{
+        display:inline;
+    }
+    button{
+        height: 35px;
+    }
+.nes-field {
+    display:inline-block;
+    width: 55%;
+}
+#search_field, #search {
+    margin:0;
+}
+#alert{
+    display: block;
+}
+.nes-bcrikko {
+  display: none;
+}
+
+
+.nes-balloon{
+   height: 30px;
+   float: right;
+   margin-left: 0;
+   margin-right: 0;
+   width: 45%;
+   
+}
     #search_field {
         width: 90%;
     }
     #tv {
-        background-image: url("imgs/ProjectPicGB.png");
+        background-image: url("imgs/Project1PicGB.jpg")
     }
     .container {
     font-size: 10px;
-    width: 50%;
-    height: 200px;
+    margin-left: 0;
+    height: 100px;
     border: 1px dotted black;
-    margin-left: 70px;
-    margin-top: 80px;
+    margin-left: 0;
+    margin-top: 0;
     overflow: scroll;
     }
     #scrollDiv {
         font-size: 10px;
-        width: 50%;
-        height: 180px;
-        margin-left: 70px;
+        width: 65%;
+        margin-left: 80px;
         margin-top: 10px;
+        height: 500px;
     }
     .player {
         width: 150px;
@@ -96,57 +139,26 @@ img:not(#logo) {
     }
     .grid {
         display: inline-block;
+    }                                                    
+}
+
+@media screen and (max-width: 450px) {
+    #scrollDiv {
+        height: 430px;
+    }
+    img:not(#logo){
+        width: 90%; 
+            }
+
+}
+@media screen and (max-width: 400px) {
+    #scrollDiv {
+        height: 300px;
+        margin-left: 70px;
     }
 }
-@media screen and (min-width: 481px) {
-    .container {
-        font-size: 14px;
-        width: 85%;
-        height: auto;
-        border: 1px dotted black;
-        overflow: auto; 
-    }
-    #scrollDiv {
-        width:85%;
-        max-height: 230px;
-        font-size: 14px;
-    }
-    .content {
-        max-height: 200px;
-    }
-    #search_field {
-        width: 65%;
-    }
-    .player {
-        width: 250px;
-    }
-    iframe {
-        width: 250px;
-        height: 150px;
-    }
-    #youtube {
-        width: 250px;
-    }
-    #modal {
-        width: 270px;
-    }
-    .grid {
-        display: inline-block;
-    }
-}
-/* @media screen and (min-width: 1025px) {
-    #scrollDiv {
-        width:85%;
-        margin-right: 15%; 
-    }
-   
-    .content {
-        max-height: 370px;
-    }
-    #search_field {
-        width: 55%;
-    }
-/* }  */
+
+
 .modal {
     position: fixed;
     top: 50%;
@@ -159,6 +171,7 @@ img:not(#logo) {
     background-color: white;
     width: 780px;
     max-width: 80%;
+    color:black;
 }
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
@@ -184,6 +197,7 @@ img:not(#logo) {
 }
 .modal-body {
     padding: 10px 5px;
+    font: black ;
 }
 #overlay {
     position: fixed;
@@ -203,12 +217,10 @@ img:not(#logo) {
 .player {
     margin: 3px;
 }
-/* .nes-btn:not(#search-button) {
-    display: none; */
-/* } */
 #alert {
     display: none;
 }
 #yBtn {
     display: none;
 }
+
