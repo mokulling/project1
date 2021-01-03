@@ -124,6 +124,15 @@ height: 400px
     display: none;
 }
 
+@media screen and (max-width: 1000px) {
+    #modal {
+        width: 300px;
+    }
+    .grid {
+        display: inline-block;
+    }          
+}
+
 
 @media screen and (max-width: 800px) {
     #scrollDiv{
@@ -247,5 +256,4 @@ width: 99%;
         padding-right: 38px;
     }
 }
-
 
