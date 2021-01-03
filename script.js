@@ -103,7 +103,7 @@ function getPastSearch(event) {
     var target = event.target;
     if (event.target.matches("li")) {
         input = target.textContent.trim(2);
-        inputStr = input.replace(/\s+/g, '-').replace(/:|!/g,'').toLowerCase()
+        inputStr = input.replace(/\s+/g, '-').replace(/:|!/g,'').replace(/\(|\)/g, "").toLowerCase()
         $("#balloon").empty()
         pBox.empty()
         getInfo();
