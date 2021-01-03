@@ -15,14 +15,17 @@ goBtn.on('click', function (event) {
     $('#alert').hide()
     event.preventDefault()
     pBox.empty()
-    console.log(searchField.val())
     input = searchField.val()
     inputStr = input.replace(/\s+/g, '-').toLowerCase()
-    // console.log(input)
     $("#balloon").empty()
     getInfo(input)
 })
 function getInfo(input) {
+    $("body").attr("id", 'tv');
+$("body").css("color", "white")
+if(window.innerWidth < 480) {
+$("h1").css("display", "none")
+}
     const settings = {
         "async": true,
         "crossDomain": true,
@@ -34,18 +37,12 @@ function getInfo(input) {
         }
     };
     $.ajax(settings).then(function (response) {
-        console.log(!!response)
         if (response.redirect) {
             input = response.slug
             inputStr = input.replace(/\s+/g, '-').toLowerCase()
             getInfo()
         }
         else {
-            // console.log(response.description);
-            //console.log(response.clip.clips.full)
-            // console.log(response.background_image)
-            // console.log(response.released)
-            // console.log(response.stores)
             placeholderDiv.html(response.description)
             video.html('<img src=' + response.background_image + '>')
             title = response.name
@@ -74,7 +71,6 @@ function getYT() {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
-        // console.log(response);
         for (var i = 0; i < 3; i++) {
             $(youtubeDiv).append('<div class="player"><iframe width="250" height="250" src="https://www.youtube.com/embed/' + response.items[i].id.videoId + '"frameborder="0" allowfullscreen></iframe></div>');
         }
@@ -119,6 +115,7 @@ function getPastSearch(event) {
 }
 $(document).on("click", getPastSearch);
 addToList()
+
 function top10Fun() {
     const listSettings = {
         "async": true,
@@ -135,7 +132,6 @@ function top10Fun() {
         top10.empty()
         for (let i = 0; i < 10; i++) {
             const currentGame = topGameArray[i];
-            console.log(currentGame.name)
             top10.append('<li>' + currentGame.name)
         }
     });
@@ -145,10 +141,10 @@ $(top10Btn).on('click', top10Fun)
 const openModalButtons = document.querySelectorAll("[data-modal-target]")
 const closeModalButtons = document.querySelectorAll("[data-close-button]")
 const overlay = document.getElementById("overlay")
+
 openModalButtons.forEach(button => {
     button.addEventListener("click", () => {
         const modal = document.querySelector(button.dataset.modalTarget) 
-        console.log(button.dataset.modalTarget)
         openModal(modal)
     })
 })
@@ -168,5 +164,4 @@ function closeModal(modal) {
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
-$(window).on('load', addNoise);
 
