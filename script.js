@@ -22,6 +22,7 @@ goBtn.on('click', function (event) {
 })
 function getInfo(input) {
     $("body").attr("id", 'tv');
+$("body").css("color", "white");
     const settings = {
         "async": true,
         "crossDomain": true,
