@@ -11,6 +11,7 @@ var input = ''
 var gameArray = JSON.parse(localStorage.getItem("prevGames")) || []
 var top10 = $('#top-10')
 var top10Btn = $('#10-btn')
+
 goBtn.on('click', function (event) {
     $('#alert').hide()
     event.preventDefault()
@@ -63,7 +64,7 @@ $("body").css("color", "white");
 function getYT() {
     youtubeDiv.empty()
     var userInput = input
-    var queryURL = "https://www.googleapis.com/youtube/v3/search? + key + part=snippet&key=AIzaSyCa_6yhtb95grtNTn6fca0k_dhcGkioEjk&type=video&q=" + userInput
+    var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCa_6yhtb95grtNTn6fca0k_dhcGkioEjk&type=video&q=" + userInput
     $.ajax({
         url: queryURL,
         method: "GET",
