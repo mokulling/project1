@@ -124,6 +124,29 @@ height: 400px
     display: none;
 }
 
+@media screen and (max-height: 620px) {
+    #scrollDiv{
+        height: 235px;
+    }
+    .player {
+        width: 250px;
+    }
+    iframe {
+        width: 250px;
+        height: 150px;
+    }
+    #youtube {
+        width: 250px;
+    }
+    #modal {
+        width: 270px;
+    }
+    .grid {
+        display: inline-block;
+    }
+
+
+
 @media screen and (max-width: 1000px) {
     #modal {
         width: 300px;

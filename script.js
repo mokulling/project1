@@ -63,7 +63,7 @@ $("body").css("color", "white");
 function getYT() {
     youtubeDiv.empty()
     var userInput = input
-    var queryURL = "https://www.googleapis.com/youtube/v3/search? + key + part=snippet&key=AIzaSyBBH_0h56NUXY4VCpcQTIe1TB0W9ngehfY&type=video&q=" + userInput
+    var queryURL = "https://www.googleapis.com/youtube/v3/search? + key + part=snippet&key=AIzaSyCa_6yhtb95grtNTn6fca0k_dhcGkioEjk&type=video&q=" + userInput
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -104,6 +104,7 @@ function getPastSearch(event) {
     if (event.target.matches("li")) {
         input = target.textContent.trim(2);
         inputStr = input.replace(/\s+/g, '-').replace(/:|!/g,'').replace(/\(|\)/g, "").toLowerCase()
+        input=inputStr
         $("#balloon").empty()
         pBox.empty()
         getInfo();
